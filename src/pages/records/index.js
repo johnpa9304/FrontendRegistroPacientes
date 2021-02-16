@@ -5,7 +5,7 @@ import TablaRecords from '../../components/TablaRecords';
 function  RecordsPage(props) {
     return(
         <React.Fragment>
-            <h1>Registros</h1>
+            <h1 align="center">Registros</h1>
             <div className="container">
                 <TablaRecords></TablaRecords>
             </div>

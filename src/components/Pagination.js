@@ -1,28 +1,44 @@
 import React, { Component } from 'react'
 
 class Pagination extends Component {
+
     render() {
-        const { postsPerPage, totalPosts, paginate, nextPage, prevPage } = this.props;
+        const { registrosPerPage, totalRegistros, paginate, nextPage, prevPage, currentPage } = this.props;
+
+        var botonActivoP = false;
+        var botonActivoN = false;
 
         const pageNumbers = [];
 
-        for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(totalRegistros / registrosPerPage); i++) {
             pageNumbers.push(i);
+        }
+
+        if(!(Math.ceil(totalRegistros / registrosPerPage)===currentPage)){
+            botonActivoN = true;
+        }else{
+            botonActivoN = false;
+        }
+
+        if(!(1===currentPage)){
+            botonActivoP = true;
+        }else{
+            botonActivoP = false;
         }
 
         return (
             <nav>
                 <ul className="pagination justify-content-end">
                     <li className="page-item">
-                        <a className="page-link" href="#" onClick={() => prevPage()}>Previous</a>
+                        <button className="page-link" onClick={() => prevPage()} disabled={!botonActivoP}>Previous</button>
                     </li>
                     {pageNumbers.map(num => (
                         <li className="page-item" key={num}>
-                            <a onClick={() => paginate(num)} href="#" className="page-link">{num}</a>
+                            <button onClick={() => paginate(num)} className="page-link">{num}</button>
                         </li>
                     ))}
                     <li className="page-item">
-                        <a className="page-link" href="#" onClick={() => nextPage()}>Next</a>
+                        <button className="page-link" onClick={() => nextPage()} disabled={!botonActivoN}>Next</button>
                     </li>
                 </ul>
             </nav>

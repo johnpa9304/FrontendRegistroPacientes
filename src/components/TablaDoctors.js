@@ -69,6 +69,8 @@ class TableDoctors extends React.Component{
             this.peticionGet();
         }).catch(error => {
             console.log(error.message);
+            this.setState({mensaje: 'Tiene que borrar primero los registros del Doctor', icono: 'error'});
+            this.mostrarAlerta();
         })
     }
 

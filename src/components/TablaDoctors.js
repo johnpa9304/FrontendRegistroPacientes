@@ -11,7 +11,7 @@ class TableDoctors extends React.Component{
     state = {
         data:[],
         currentPage: 1,
-        registrosPerPage: 5,
+        registrosPerPage: 10,
         modalInsertar: false,
         modalEliminar: false,
         mensaje: '',
@@ -43,6 +43,8 @@ class TableDoctors extends React.Component{
             this.peticionGet();
         }).catch(error => {
             console.log(error.message);
+            this.setState({mensaje: 'Formulario llenado incorrectamente', icono: 'error'});
+            this.mostrarAlerta();
         })
     }
 
@@ -54,6 +56,8 @@ class TableDoctors extends React.Component{
             this.peticionGet();
         }).catch(error => {
             console.log(error.message);
+            this.setState({mensaje: 'Formulario llenado incorrectamente', icono: 'error'});
+            this.mostrarAlerta();
         })
     }
 

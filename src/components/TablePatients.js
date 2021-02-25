@@ -66,6 +66,8 @@ class TablePatients extends React.Component{
             this.peticionGet();
         }).catch(error => {
             console.log(error.message);
+            this.setState({mensaje: 'Formulario llenado incorrectamente', icono: 'error'});
+            this.mostrarAlerta();
         })
     }
 
@@ -77,6 +79,8 @@ class TablePatients extends React.Component{
             this.peticionGet();
         }).catch(error => {
             console.log(error.message);
+            this.setState({mensaje: 'Formulario llenado incorrectamente', icono: 'error'});
+            this.mostrarAlerta();
         })
     }
 

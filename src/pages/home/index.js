@@ -1,6 +1,6 @@
 import React from 'react';
 import Foto from "../../img/Jhon.jpg"
-import Foto2 from "../../img/guillermo.JPG"
+import Foto2 from "../../img/guillermo.jpg"
 import Foto3 from "../../img/Johnny.jpg"
 
 function  HomePage(props) {
@@ -13,11 +13,11 @@ function  HomePage(props) {
                 <div className="card">
                     <img src={Foto} className="card-img-top" alt="..." />
                     <div className="card-body">
-                        <h5 className="card-title">John Peña</h5>
+                        <h5 className="card-title">Jhon Peña</h5>
                         <p className="card-text">Estudiante de la Carrera de Computacion UCSG</p>
                     </div>
                     <div className="card-footer">
-                        <small className="text-muted">6to Semestre/7mo Semestre</small>
+                        <small className="text-muted">7mo Semestre</small>
                     </div>
                 </div>
                 <div className="card">
